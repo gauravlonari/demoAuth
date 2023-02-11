@@ -5,14 +5,14 @@ import { Button } from "@mui/material";
 
 
 function App() {
-  const [register, setRegister] = useState(true);
+  const [type, setType] = useState(0);
   
   return (
     <div className="container mh-vh d-flex justify-content-center align-items-center w-100 flex-column">
-      {register?<Register/>:<Login/>}
+      {type===0?<Register/>:type===1?<Login setLoggedIn={setType}/>:<h4>You are successfully logged in</h4>}
       <Button variant="text" className="mt-4 fs-5" onClick={()=>{
-        setRegister(!register)
-      }}>Go to {register?"Login":"Register"}</Button>
+        setType(type===0?1:0)
+      }} disabled={type===2}>Go to {type===0?"Login":"Register"}</Button>
     </div>
   );
 }

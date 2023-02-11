@@ -22,3 +22,9 @@ code {
   max-height: 400px !important;
   max-width: 400px !important;
 }
+.modal-backdrop{
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+*{
+  transition: all 150ms ease;
+}
