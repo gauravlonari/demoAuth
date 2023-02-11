@@ -16,9 +16,17 @@ export default function Page2({data,setPage,setData}) {
   useEffect(()=>{
     if(data.src)
         setSrc(data.src)
+    if(data.file)
         setFile(data.file)
+    if(data.crop)
         setCompletedCrop(data.crop)
   },[])
+
+//   useEffect(()=>{
+//     console.log("completedCrop",completedCrop);
+//     console.log("file",file);
+
+//   },[completedCrop])
 
     const handleSubmit=async (e) => {
         e.preventDefault();

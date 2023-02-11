@@ -64,9 +64,9 @@ export default function Page1({data,setPage,setData}) {
     setValues,
   } = formik;
   
-    useEffect(()=>{
-      console.log(values,data)
-    },[values])
+    // useEffect(()=>{
+    //   console.log(values,data)
+    // },[values])
 
   return <section>
     <form onSubmit={handleSubmit}>

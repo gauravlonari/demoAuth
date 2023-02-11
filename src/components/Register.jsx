@@ -37,7 +37,7 @@ export default function Register() {
         <Button
           variant="contained"
           onClick={() => {
-            setPage(page == 1 ? 1 : page - 1);
+            setPage(page === 1 ? 1 : page - 1);
           }}
           disabled={page===1}
           >
