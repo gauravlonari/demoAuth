@@ -3,6 +3,11 @@ import { Button } from "@mui/material";
 
 export default function Login() {
 
+  // const initialValues = {
+  //   email: "",
+  //   password:""
+  // };
+
   useEffect(()=>{
     document.title="Login"
   },[])
@@ -13,7 +18,7 @@ export default function Login() {
       <div className="d-flex justify-content-center align-items-center flex-column mb-4"> 
         <h5>Login</h5>
         <form>
-          Not Implemented
+          
         </form>
         </div> 
       </div>
