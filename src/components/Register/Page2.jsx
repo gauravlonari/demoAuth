@@ -10,28 +10,30 @@ import ImageCropper from "./ImageCropper";
 export default function Page2({data,setPage,setData}) {
     const [src, setSrc] = useState("");
     const [file, setFile] = useState(null);
-    const [completedCrop, setCompletedCrop] = useState(null);
+    const [croppedImage, setCroppedImage] = useState(null);
     
-    
+    // useEffect(()=>{
+    //     console.log(src,file,croppedImage);
+    // })
+
   useEffect(()=>{
     if(data.src)
         setSrc(data.src)
     if(data.file)
         setFile(data.file)
     if(data.crop)
-        setCompletedCrop(data.crop)
+        setCroppedImage(data.crop)
   },[])
 
 //   useEffect(()=>{
-//     console.log("completedCrop",completedCrop);
-//     console.log("file",file);
+//      console.log("croppedImage",croppedImage);
+//      console.log("file",file);
+//   },[croppedImage])
 
-//   },[completedCrop])
-
-    const handleSubmit=async (e) => {
+    const handleSubmit=(e) => {
         e.preventDefault();
         if(file){
-            setData({...data,img:file,src:src,crop:completedCrop})
+            setData({...data,file:file,src:src,crop:croppedImage})
             setPage(3);
         }
     }
@@ -61,11 +63,11 @@ export default function Page2({data,setPage,setData}) {
         }
         <div className='d-flex flex-row mb-3'>
 
-            <ImageCropper src={src} setCompletedCrop={setCompletedCrop}/>
+            <ImageCropper src={src} setCroppedImage={setCroppedImage}/>
             {/* <img src={src} className="mx-2 border border-2 p-2 image-view"/> */}
         </div>
         </div>
-        <Button variant="contained" disabled={!completedCrop} fullWidth type="submit">Submit</Button>  
+        <Button variant="contained" disabled={!croppedImage} fullWidth type="submit">Submit</Button>  
     </form>
   </section>;
 }
